@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+  Post.create(
+  productname: 'Sweetos',
+  description: 'Easter themed cheetos snacks that are shaped like eggs and flavored with sugar and cinnamon',
+  price: "4.99",
+  location: "Target",
+  address: "2800 Dublin Blvd",
+  city: "Dublin",
+  state: "California",
+  user_id: 1 )
+
+  

@@ -1,1 +1,10 @@
 <h1>HELLO!</h1>
+<div>
+  <% if current_user %>
+  <%= link_to "Post Your Find!", new_post_path %>
+  |
+  <%= link_to "View All Finds!", posts_path%>
+  <% else %>
+  <%= link_to "View All Finds!", posts_path%>
+  <% end %>
+</div>

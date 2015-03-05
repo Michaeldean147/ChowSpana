@@ -1,0 +1,21 @@
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+
+  <div id="indexPost">
+    <div id="indexProName">
+      <%= post.productname %>
+    </div>
+
+    <div id="indexProDes">
+      <%= post.description %>
+    </div>
+
+    <div id="indexProLoc">
+      <%= post.location %>
+    </div>
+  </div>
+
+<% end %>
+
+<%= link_to "Back", root_path %>

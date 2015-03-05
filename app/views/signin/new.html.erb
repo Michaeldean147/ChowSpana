@@ -1,0 +1,19 @@
+<%= form_tag signin_path do |f| %>
+
+<h1>Sign into ChowSpana</h1>
+
+<div >
+  <%= label_tag :email, "Email" %>
+  <%= email_field_tag :email, nil  %>
+</div>
+
+<div>
+  <%= label_tag :password, "Password" %>
+  <%= password_field_tag :password, nil %>
+</div>
+
+<div>
+  <%= submit_tag "Sign in" %>
+</div>
+
+<% end %>

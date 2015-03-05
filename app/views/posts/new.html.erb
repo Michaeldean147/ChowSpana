@@ -1,0 +1,43 @@
+<h1>Create A Post</h1>
+<%= form_for @post do |f| %>
+
+<div>
+  <%= f.label :productname %>
+  <%= f.text_field :productname %>
+</div>
+
+<div>
+  <%= f.label :decription %>
+  <%= f.text_area :description %>
+</div>
+
+<div>
+  <%= f.label :price %>
+  <%= f.text_area :price %>
+</div>
+
+<div>
+  <%= f.label :location %>
+  <%= f.text_area :location %>
+</div>
+
+<div>
+  <%= f.label :address %>
+  <%= f.text_area :address %>
+</div>
+
+<div>
+  <%= f.label :city %>
+  <%= f.text_area :city %>
+</div>
+
+<div>
+  <%= f.label :state %>
+  <%= f.text_area :state %>
+</div>
+
+<div>
+    <%= f.submit "Submit" %>
+</div>
+
+<% end %>

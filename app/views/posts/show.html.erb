@@ -1,0 +1,17 @@
+
+<div>
+  <%= @post.productname %>
+  <%= @post.description %>
+  <%= @post.price %>
+  <%= @post.location %>
+  <%= @post.address %>
+  <%= @post.city %>
+  <%= @post.state %>
+</div>
+
+<% if current_user && current_user.id == @post.user_id %>
+<%= link_to "Destroy", @post , method: :delete, data: {confirm: "Are You Sure?"} %>
+<% end %>
+
+
+<%= link_to "Back", posts_path %>

@@ -1,0 +1,24 @@
+<div>
+  <h2>User: <%= @user.username %></h2>
+
+</div>
+
+
+<h2><%="#{@user.username}'s Finds" %></h2>
+<% @user.posts.each do |post| %>
+
+<div id="indexPost">
+  <div id="indexProName">
+    <h4><%= link_to "#{post.productname}", post %></h4>
+  </div>
+
+  <div id="indexProDes">
+    <%= post.description %>
+  </div>
+
+  <div id="indexProLoc">
+    <%= post.location %>
+  </div>
+</div>
+
+<% end %>

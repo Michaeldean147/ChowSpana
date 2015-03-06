@@ -1,5 +1,7 @@
 
 <div>
+  <%=@post.user.username %>
+  <%= image_tag @post.image.url, :size => "260x180" %>
   <%= @post.productname %>
   <%= @post.description %>
   <%= @post.price %>
@@ -10,6 +12,7 @@
 </div>
 
 <% if current_user && current_user.id == @post.user_id %>
+<%= link_to "Edit", edit_post_path(@post) %> |
 <%= link_to "Destroy", @post , method: :delete, data: {confirm: "Are You Sure?"} %>
 <% end %>
 

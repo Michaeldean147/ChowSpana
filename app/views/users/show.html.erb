@@ -4,7 +4,7 @@
 </div>
 
 
-<h2><%="#{@user.username}'s Finds" %></h2>
+<h2><%="#{@user.username}'s Finds: #{@user.posts.length}" %></h2>
 <% @user.posts.each do |post| %>
 
 <div id="indexPost">

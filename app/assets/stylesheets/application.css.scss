@@ -49,21 +49,16 @@
 #signupSegment{
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
   height: 600px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: thin;
+
 }
 
 #signinSegment{
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(83%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
   height: 600px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: thin;
 }
 
 body{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(246,248,249,1)), color-stop(44%,rgba(215,222,227,1)), color-stop(44%,rgba(215,222,227,1)), color-stop(50%,rgba(229,235,238,1)), color-stop(100%,rgba(245,247,249,1)));
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1)));
 }
 
 #browseWell{
@@ -77,6 +72,9 @@ body{
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
   background: url("popaisle.jpg") no-repeat;
+  border-style: solid;
+  border-color: #000000;
+  border-width: thin;
 }
 
 #storeImg{
@@ -86,6 +84,9 @@ body{
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
   background: url("store.jpg") no-repeat;
+  border-style: solid;
+  border-color: #000000;
+  border-width: thin;
 }
 
 #poprackImg{
@@ -95,6 +96,9 @@ body{
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
   background: url("pop_rack.jpg") no-repeat;
+  border-style: solid;
+  border-color: #000000;
+  border-width: thin;
 }
 #candyaisleImg{
   width: 175px;
@@ -103,6 +107,9 @@ body{
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
   background: url("candyisle.jpg") no-repeat;
+  border-style: solid;
+  border-color: #000000;
+  border-width: thin;
 }
 
 #innerSignupSegment{
@@ -119,4 +126,73 @@ body{
 
 #homeSignUpLink{
   color: #000000;
+}
+
+#signInField{
+  margin-bottom: 2%;
+  width: 60%;
+}
+
+#signUpField{
+  margin-bottom: 2%;
+  width: 60%;
+}
+
+#postIndexGrids{
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  margin-right: 5%;
+  margin-bottom: 3%;
+  -webkit-border-radius: 10px;
+}
+
+#postIndexNavColumn{
+  width: 20%;
+  float: left;
+  margin-left: 2%;
+}
+
+#indexNavSegment{
+  height: 274px;
+  -webkit-border-radius: 10px;
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+}
+
+#userMenuLabel{
+  text-decoration: underline;
+  margin-top: -10%;
+  margin-bottom: 3%;
+}
+
+#userMenuButtons{
+ margin-top: 8%;
+}
+
+.userMenuFavoritesButton{
+  padding: 10%;
+  width: 79%;
+}
+
+.userMenuHomeButton{
+  width: 79%;
+}
+
+.userMenuNewPostButton{
+  width: 79%;
+}
+
+#indexNavFilter{
+ margin: 8%;
+}
+
+#indexNavSegmentHeader{
+  margin-top: 0%;
+}
+
+#indexHeader{
+  margin-left: 29%;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
 }

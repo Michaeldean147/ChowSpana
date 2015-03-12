@@ -1,19 +1,29 @@
-<%= form_tag signin_path do |f| %>
+<div class="ui centered grid">
+  <div class="six wide column">
+    <%= form_tag signin_path do |f| %>
 
-<h1>Sign into ChowSpana</h1>
+    <center>
+      <h1>Sign In</h1>
+    </center>
 
-<div >
-  <%= label_tag :email, "Email" %>
-  <%= email_field_tag :email, nil  %>
+    <center>
+      <div id="signInField" class="ui input">
+        <%= label_tag :email, "Email" %>
+        <%= email_field_tag :email, nil  %>
+      </div>
+    </center>
+
+    <center>
+      <div id="signInField" class="ui input">
+        <%= label_tag :password, "Password" %>
+        <%= password_field_tag :password, nil %>
+      </div>
+    </center>
+
+    <center>
+        <%= submit_tag "Sign in", class:"ui red button" %>
+   </center>
+
+    <% end %>
+  </div>
 </div>
-
-<div>
-  <%= label_tag :password, "Password" %>
-  <%= password_field_tag :password, nil %>
-</div>
-
-<div>
-  <%= submit_tag "Sign in" %>
-</div>
-
-<% end %>

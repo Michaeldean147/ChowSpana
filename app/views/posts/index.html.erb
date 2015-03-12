@@ -1,26 +1,47 @@
-<h1>Posts</h1>
-
-<% @posts.each do |post| %>
-
-  <div id="indexPost">
-    <div id="indexProName">
-      <h4><%= link_to "#{post.productname}", post %></h4>
-    </div>
-
-    <div id="indexProDes">
-      <%= post.description %>
-    </div>
-
-    <div id="indexProLoc">
-      <%= post.location %>
-    </div>
-
-    <div id="indexProUser">
-
-      <%= link_to "#{post.user.username}", post.user %>
+<center><h1 id="indexHeader">All Finds</h1></center>
+<div class="three column row centered">
+  <div id="postIndexNavColumn" class="column">
+    <div id="indexNavSegment" class="ui segment">
+      <center><h3 id="indexNavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
+      <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
+      <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center id="userMenuButtons"><%= link_to "View Your Favorites", root_path, class:"ui small button userMenuFavoritesButton" %></center>
+      <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
+      <div id="indexNavFilter" class="ui small icon input">
+        <input type="text" placeholder="Filter Finds">
+        <i class="search icon"></i>
+      </div>
     </div>
   </div>
+<div>
 
+<% @posts.each do |post| %>
+<div id="postIndexMainGrid" class="ui grid">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <div id="indexPost">
+      <div id="postIndexPic" class="right floated center aligned two wide column">
+        <%= image_tag post.image.url, :size => "260x180" %>
+      </div>
+      <div id="indexProName">
+        <h3><%= link_to "#{post.productname}", post, {:style=>'color:#000000;', :class => "css_class"} %></h3>
+      </div>
+
+      <div id="indexProLoc">
+        <h5><%= "Spotted at: #{post.location}"%></h5>
+      </div>
+
+      <div id="indexProPrice">
+        <h5><%= "Price: #{post.price}"%></h5>
+      </div>
+
+      <div id="indexProUser">
+        <h5>
+          <%= "Posted By User:" %>
+          <%=link_to "#{post.user.username}", post.user, {:style=>'color:#000000;', :class => "css_class"} %>
+        </h5>
+      </div>
+
+    </div>
+  </div>
+</div>
 <% end %>
-
-<%= link_to "Back", root_path %>

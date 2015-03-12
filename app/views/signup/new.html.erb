@@ -1,29 +1,42 @@
-<%= form_for @user, url: sign_up_path do |f| %>
-  <h1>Sign Up For ChowSpana</h1>
+<div class="ui centered grid">
+  <div class="six wide column">
+    <%= form_for @user, url: sign_up_path do |f| %>
+      <center><h1>Sign Up For ChowSpana</h1></center>
 
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+      <center>
+        <div id="signUpField" class="ui input">
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+        </div>
+      </center>
+
+    <center>
+      <div id="signUpField" class="ui input">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+    </center>
+
+    <center>
+      <div id="signUpField" class="ui input">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+    </center>
+
+    <center>
+      <div id="signUpField" class="ui input">
+       <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </center>
+
+    <center>
+      <div>
+        <%= f.submit "Sign up", class:"ui red button"%>
+      </div>
+    </center>
+
+    <% end %>
   </div>
-
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-
-  <div>
-   <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div>
-    <%= f.submit "Sign up"%>
-  </div>
-  
-<% end %>
+</div>

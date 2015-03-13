@@ -49,17 +49,18 @@
 #signupSegment{
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
   height: 600px;
-
+  -webkit-border-radius: 60px;
 }
 
 #signinSegment{
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(83%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
   height: 600px;
+  -webkit-border-radius: 60px;
 }
 
-body{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1)));
-}
+// body{
+//   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1)));
+// }
 
 #browseWell{
   background: -webkit-gradient(linear, left bottom, right top, color-stop(9%,rgba(221,35,38,1)), color-stop(77%,rgba(242,36,36,1)), color-stop(100%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1)));
@@ -195,4 +196,8 @@ body{
 
 a:hover {
   text-decoration: underline;
+}
+
+body{
+  background-image: url("/assets/junk30.png")
 }

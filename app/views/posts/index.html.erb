@@ -1,8 +1,8 @@
 <center><h1 id="indexHeader">All Finds</h1></center>
 <div class="three column row centered">
-  <div id="postIndexNavColumn" class="column">
-    <div id="indexNavSegment" class="ui segment">
-      <center><h3 id="indexNavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
+  <div id="NavColumn" class="column">
+    <div id="NavSegment" class="ui segment">
+      <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "View Your Favorites", root_path, class:"ui small button userMenuFavoritesButton" %></center>
@@ -27,7 +27,7 @@
       </div>
 
       <div id="indexProLoc">
-        <h5><%= "Spotted at: #{post.location}"%></h5>
+        <h5><%= "Spotted In: #{post.city}, #{post.state}"%></h5>
       </div>
 
       <div id="indexProPrice">

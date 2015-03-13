@@ -1,5 +1,59 @@
+<center><h1 id="showHeader"><%=@post.productname%></h1></center>
+<div class="three column row centered">
+  <div id="NavColumn" class="column">
+    <div id="postShowNavSegment" class="ui segment">
+      <center><h3 id="SegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
+      <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
+      <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center id="userMenuButtons"><%= link_to "View Your Favorites", root_path, class:"ui small button userMenuFavoritesButton" %></center>
+      <center id="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuHomeButton" %></center>
+      <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
 
-<div>
+      <center><h3 id="SegmentHeader"><%= "Post Options" %></h3></center>
+      <% if current_user && current_user.id == @post.user_id %>
+      <center id="userMenuButtons"><%= link_to "Edit Post", edit_post_path(@post), class:"ui small button userMenuNewPostButton" %></center>
+      <center id="userMenuButtons"><%= link_to link_to "Destroy Post", @post , method: :delete, data: {confirm: "Are You Sure?"}, class:"ui small button userMenuNewPostButton" %></center>
+      <% else %>
+      <center id="userMenuButtons"><%= link_to "Favorite This Post!", root_path, class:"ui small button userMenuNewPostButton" %></center>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div id="postIndexMainGrid" class="ui grid">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <div id="indexPost">
+      <div class="right floated center aligned two wide column">
+        <%= image_tag @post.image.url, :size => "260x180" %>
+      </div>
+
+      <div>
+        <p><%= @post.description %></p>
+      </div>
+
+      <div>
+        <h5><%= "Spotted at: #{@post.location}" %></h5>
+      </div>
+
+      <div>
+        <h5><%= "Location: #{@post.address}"%><br>
+        <%="#{@post.city}, #{@post.state}" %></h5>
+      </div>
+
+      <div>
+        <h5><%= "Price:  #{@post.price}" %></h5>
+      </div>
+
+      <div>
+        <h5>
+          <%= "Posted By User: " %>
+          <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %>
+        </h5>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- <div>
   <%=@post.user.username %>
   <%= image_tag @post.image.url, :size => "260x180" %>
   <%= @post.productname %>
@@ -9,12 +63,4 @@
   <%= @post.address %>
   <%= @post.city %>
   <%= @post.state %>
-</div>
-
-<% if current_user && current_user.id == @post.user_id %>
-<%= link_to "Edit", edit_post_path(@post) %> |
-<%= link_to "Destroy", @post , method: :delete, data: {confirm: "Are You Sure?"} %>
-<% end %>
-
-
-<%= link_to "Back", posts_path %>
+</div> -->

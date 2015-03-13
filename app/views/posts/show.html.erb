@@ -19,7 +19,7 @@
             <%= link_to "Favorite This Post!", favorites_path(post: @post), method: :post, class:"ui small button userMenuNewPostButton" %>
           </center>
         <% else %>
-          GOLD STAR
+          <%= "You Have Already Favorited This Post" %>
         <% end %>
       <% end %>
     </div>
@@ -52,7 +52,7 @@
       <div>
         <h5>
           <%= "Posted By User: " %>
-          <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %>
+          <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %><br>
           <%="Posted on #{@post.created_at}"%>
         </h5>
       </div>

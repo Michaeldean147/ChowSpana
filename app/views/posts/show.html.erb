@@ -14,7 +14,13 @@
       <center id="userMenuButtons"><%= link_to "Edit Post", edit_post_path(@post), class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to link_to "Destroy Post", @post , method: :delete, data: {confirm: "Are You Sure?"}, class:"ui small button userMenuNewPostButton" %></center>
       <% else %>
-      <center id="userMenuButtons"><%= link_to "Favorite This Post!", root_path, class:"ui small button userMenuNewPostButton" %></center>
+        <% if !current_user.favorited_posts.include?(@post) %>
+          <center id="userMenuButtons">
+            <%= link_to "Favorite This Post!", favorites_path(post: @post), method: :post, class:"ui small button userMenuNewPostButton" %>
+          </center>
+        <% else %>
+          <%= "You Have Already Favorited This Post" %>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -46,21 +52,11 @@
       <div>
         <h5>
           <%= "Posted By User: " %>
-          <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %>
+          <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %><br>
+          <%="Posted on #{@post.created_at}"%>
         </h5>
       </div>
 
     </div>
   </div>
 </div>
-<!-- <div>
-  <%=@post.user.username %>
-  <%= image_tag @post.image.url, :size => "260x180" %>
-  <%= @post.productname %>
-  <%= @post.description %>
-  <%= @post.price %>
-  <%= @post.location %>
-  <%= @post.address %>
-  <%= @post.city %>
-  <%= @post.state %>
-</div> -->

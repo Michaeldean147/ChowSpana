@@ -14,7 +14,13 @@
       <center id="userMenuButtons"><%= link_to "Edit Post", edit_post_path(@post), class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to link_to "Destroy Post", @post , method: :delete, data: {confirm: "Are You Sure?"}, class:"ui small button userMenuNewPostButton" %></center>
       <% else %>
-      <center id="userMenuButtons"><%= link_to "Favorite This Post!", root_path, class:"ui small button userMenuNewPostButton" %></center>
+        <% if !current_user.favorited_posts.include?(@post) %>
+          <center id="userMenuButtons">
+            <%= link_to "Favorite This Post!", favorites_path(post: @post), method: :post, class:"ui small button userMenuNewPostButton" %>
+          </center>
+        <% else %>
+          GOLD STAR
+        <% end %>
       <% end %>
     </div>
   </div>

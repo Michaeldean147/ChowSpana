@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :users
   resources :posts
-
+  resources :favorites
 
   # Example resource route with options:
   #   resources :products do

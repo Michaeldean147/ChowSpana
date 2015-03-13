@@ -5,7 +5,7 @@
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
-      <center id="userMenuButtons"><%= link_to "View Your Favorites", root_path, class:"ui small button userMenuFavoritesButton" %></center>
+      <center id="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
       <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
       <div id="indexNavFilter" class="ui small icon input">
         <input type="text" placeholder="Filter Finds">

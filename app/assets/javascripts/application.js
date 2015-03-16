@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
+//
 // $(document).ready(function() {
-//   $('#favorite-link').on('click', function() {
-//     // ???
+//   $('.postIndexFilterButton').on('click', function() {
+//     event.preventDefault()
+//
 //   });
 // });

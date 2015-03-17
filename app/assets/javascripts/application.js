@@ -14,9 +14,20 @@
 //= require jquery_ujs
 //= require_tree .
 //
-// $(document).ready(function() {
-//   $('.postIndexFilterButton').on('click', function() {
-//     event.preventDefault()
-//
-//   });
-// });
+$(document).ready(function() {
+  $('#filterButton').on('click', function() {
+      $.ajax({
+      url: "/search",
+      method: 'GET',
+      dataType: "json"
+    }).done(
+      function(data){
+        $(".indexGrids").remove()
+        for (var i = 0; i < data.length; i++) {
+          $("body").append("<h1>Product Name Is:" + data[i].productname + "</h1>")
+        }
+
+      }
+    )
+  });
+});

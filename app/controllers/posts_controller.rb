@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all.sort_by &:created_at
   end
 
   def new
@@ -27,6 +27,10 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def search
+    render json: Post.all.reverse 
   end
 
   def edit

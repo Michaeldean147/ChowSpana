@@ -13,6 +13,7 @@ Rails.application.routes.draw do
    get '/sign-in' => 'signin#new', as: :signin
    post '/sign-in' => 'signin#create'
    get '/sign-out' => 'signin#destroy', as: :signout
+   get '/search' => 'posts#search'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

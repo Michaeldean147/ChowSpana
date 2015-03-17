@@ -4,7 +4,7 @@
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
-      <center><button type="submit" class="ui small button postIndexFilterButton">Filter: By Oldest</button></center>
+      <center><button id="filterButton" name="button">Filter: By Newest</button></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>

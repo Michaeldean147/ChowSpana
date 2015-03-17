@@ -4,20 +4,20 @@
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
-      <center><button type="submit" class="ui small button postIndexFilterButton">Filter: By Oldest</button></center>
+      <center><button id="filterButton" class:"ui small button userMenuNewPostButton" name="button">Filter: By Newest</button></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
       <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
       <div id="indexNavFilter" class="ui small icon input">
-        <input type="text" placeholder="Filter Finds">
-        <i class="search icon"></i>
+        <input class="searchBox" type="text" placeholder="Filter Finds">
+        <i id="searchGlass" class="search icon"></i>
       </div>
     </div>
   </div>
 </div>
 
-<% @posts.reverse.each do |post| %>
-<div id="postIndexMainGrid" class="ui grid">
+<% @posts.each do |post| %>
+<div id="postIndexMainGrid" class="ui grid indexGrids">
   <div id="postIndexGrids" class="right floated left aligned ten wide column">
     <div id="indexPost">
       <div id="postIndexPic" class="right floated center aligned two wide column">

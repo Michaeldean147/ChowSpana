@@ -218,3 +218,26 @@ body{
   padding: 10%;
   width: 79%;
 }
+
+.postFormDes{
+  display: table-caption;
+}
+
+.postForm{
+  text-align: -webkit-center;
+}
+
+.postFormGrid{
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  margin-bottom: 3%;
+  -webkit-border-radius: 10px;
+}
+
+.postFormInput{
+  width: 50%;
+  margin-bottom: 1%;
+}
+
+.postFormButtons{
+  padding-top: 1%;
+}

@@ -1,24 +1,52 @@
-<div>
-  <h2>User: <%= @user.username %></h2>
+<center>
+  <div>
+    <h1 id="indexHeader"><%="#{@user.username}'s Finds" %></h1>
+    <h5 id="indexHeader"><%="Total Finds: #{@user.posts.length}" %></h5>
+  </div>
+</center>
 
+<div class="three column row centered">
+  <div id="NavColumn" class="column">
+    <div id="NavSegment" class="ui segment">
+      <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
+      <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
+      <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center id="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
+      <div id="indexNavFilter" class="ui small icon input">
+        <input type="text" placeholder="Filter Finds">
+        <i class="search icon"></i>
+      </div>
+    </div>
+  </div>
 </div>
 
+<% @user.posts.reverse.each do |post| %>
+<div id="postIndexMainGrid" class="ui grid indexGrids">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <div id="indexPost">
 
-<h2><%="#{@user.username}'s Finds: #{@user.posts.length}" %></h2>
-<% @user.posts.each do |post| %>
+      <div class="right floated center aligned two wide column">
+        <%= image_tag post.image.url, :size => "260x180" %>
+      </div>
 
-<div id="indexPost">
-  <div id="indexProName">
-    <h4><%= link_to "#{post.productname}", post %></h4>
-  </div>
+      <div id="indexProName">
+        <h3><%= link_to "#{post.productname}", post, {:style=>'color:#000000;', :class => "css_class"} %></h3>
+      </div>
 
-  <div id="indexProDes">
-    <%= post.description %>
-  </div>
+      <div id="indexProLoc">
+        <h5><%= post.location %></h5>
+      </div>
 
-  <div id="indexProLoc">
-    <%= post.location %>
+      <div id="indexProPrice">
+        <h5><%= "Price: #{post.price}"%></h5>
+      </div>
+
+      <div id="indexProDes">
+        <h5><%= post.description %></h5>
+      </div>
+
+    </div>
   </div>
 </div>
-
 <% end %>

@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    render json: Post.all.reverse 
+    render json: Post.all.reverse
   end
 
   def edit

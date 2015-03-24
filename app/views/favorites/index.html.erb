@@ -4,6 +4,8 @@
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
+      <center class="faveFilterOldestButton"><%= link_to "Filter: By Oldest", posts_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center class="faveFilterNewestButton"><%= link_to "Filter: By Newest", favorites_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
@@ -16,35 +18,38 @@
 </div>
 
 
-<% @favorites.reverse.each do |favorite| %>
+<div class="favorites">
+  <% @favorites.reverse.each do |favorite| %>
 
-<div id="postIndexMainGrid" class="ui grid">
-  <div id="postIndexGrids" class="right floated left aligned ten wide column">
-    <div id="indexPost">
-      <div id="postIndexPic" class="right floated center aligned two wide column">
-        <%= image_tag favorite.image.url, :size => "260x180" %>
-      </div>
-      <div id="indexProName">
-        <h3><%= link_to "#{favorite.productname}", favorite, {:style=>'color:#000000;', :class => "css_class"} %></h3>
-      </div>
+  <div id="postIndexMainGrid" class="ui grid">
+    <div id="postIndexGrids" class="right floated left aligned ten wide column">
+      <div id="indexPost">
+        <div id="postIndexPic" class="right floated center aligned two wide column">
+          <%= image_tag favorite.image.url, :size => "260x180" %>
+        </div>
+        <div id="indexProName">
+          <h3><%= link_to "#{favorite.productname}", favorite, {:style=>'color:#000000;', :class => "css_class"} %></h3>
+        </div>
 
-      <div id="indexProLoc">
-        <h5><%= "Spotted In: #{favorite.city}, #{favorite.state}"%></h5>
-      </div>
+        <div id="indexProLoc">
+          <h5><%= "Spotted In: #{favorite.city}, #{favorite.state}"%></h5>
+        </div>
 
-      <div id="indexProPrice">
-        <h5><%= "Price: #{favorite.price}"%></h5>
-      </div>
+        <div id="indexProPrice">
+          <h5><%= "Price: #{favorite.price}"%></h5>
+        </div>
 
-      <div id="indexProUser">
-        <h5>
-          <%= "Posted By User:" %>
-          <%=link_to "#{favorite.user.username}", favorite.user, {:style=>'color:#000000;', :class => "css_class"} %>
-        </h5>
-      </div>
+        <div id="indexProUser">
+          <h5>
+            <%= "Posted By:" %>
+            <%=link_to "#{favorite.user.username}", favorite.user, {:style=>'color:#000000;', :class => "css_class"} %>
+          </h5>
+        </div>
 
+      </div>
     </div>
   </div>
-</div>
 
-<% end %>
+  <% end %>
+
+</div>

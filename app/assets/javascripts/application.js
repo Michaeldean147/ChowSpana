@@ -15,19 +15,72 @@
 //= require_tree .
 //
 $(document).ready(function() {
-  $('#filterButton').on('click', function() {
+  $('.faveFilterOldestButton').on('click', function() {
+    event.preventDefault()
       $.ajax({
-      url: "/search",
+      url: "/sort",
       method: 'GET',
       dataType: "json"
     }).done(
       function(data){
-        $(".indexGrids").remove()
+        $(".favorites").remove()
+        $("body").append("<div class='favorites'></div>")
         for (var i = 0; i < data.length; i++) {
-          $("body").append("<h1>Product Name Is:" + data[i].productname + "</h1>")
+          console.log(data[i])
+          $(".favorites").append(
+            '<div id="postIndexMainGrid" class="ui grid"> \
+              <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
+                <div id="indexPost"> \
+                  <div id="indexProName"> \
+                    <h3><a href="posts/' + data[i].id +'" style="color:#000000;" class="css_class">' + data[i].productname + '</a></h3> \
+                  </div> \
+                  <div id="indexProLoc"> \
+                   <h5> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h5> \
+                  </div> \
+                  <div id="indexProPrice"> \
+                   <h5> Price: ' + data[i].price + '</h5> \
+                  </div> \
+                </div> \
+              </div> \
+            </div>')
         }
-
       }
     )
   });
 });
+
+// <div class="favorites">
+// <% @favorites.reverse.each do |favorite| %>
+//
+// <div id="postIndexMainGrid" class="ui grid">
+// <div id="postIndexGrids" class="right floated left aligned ten wide column">
+// <div id="indexPost">
+// <div id="postIndexPic" class="right floated center aligned two wide column">
+// <%= image_tag favorite.image.url, :size => "260x180" %>
+// </div>
+// <div id="indexProName">
+// <h3><%= link_to "#{favorite.productname}", favorite, {:style=>'color:#000000;', :class => "css_class"} %></h3>
+// </div>
+//
+// <div id="indexProLoc">
+// <h5><%= "Spotted In: #{favorite.city}, #{favorite.state}"%></h5>
+// </div>
+//
+// <div id="indexProPrice">
+// <h5><%= "Price: #{favorite.price}"%></h5>
+// </div>
+//
+// <div id="indexProUser">
+// <h5>
+// <%= "Posted By User:" %>
+// <%=link_to "#{favorite.user.username}", favorite.user, {:style=>'color:#000000;', :class => "css_class"} %>
+// </h5>
+// </div>
+//
+// </div>
+// </div>
+// </div>
+//
+// <% end %>
+//
+// </div>

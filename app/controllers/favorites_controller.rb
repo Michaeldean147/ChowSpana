@@ -14,4 +14,10 @@ class FavoritesController < ApplicationController
       redirect_to @post, error: 'There was a problem'
     end
   end
+
+  def oldest_sort
+    @favorites = current_user.favorited_posts
+    render json: @favorites
+  end
+
 end

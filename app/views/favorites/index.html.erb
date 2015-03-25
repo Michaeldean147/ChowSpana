@@ -1,9 +1,7 @@
-<center><h1 id="indexHeader">Your Favorite Posts</h1></center>
 <div class="three column row centered">
   <div id="NavColumn" class="column">
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
-      <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
       <center class="faveFilterOldestButton"><%= link_to "Filter: By Oldest", posts_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="faveFilterNewestButton"><%= link_to "Filter: By Newest", favorites_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
@@ -28,7 +26,7 @@
           <%= image_tag favorite.image.url, :size => "260x180" %>
         </div>
         <div id="indexProName">
-          <h3><%= link_to "#{favorite.productname}", favorite, {:style=>'color:#000000;', :class => "css_class"} %></h3>
+          <h1><%= link_to "#{favorite.productname}", favorite, {:class => "css_class"} %></h1>
         </div>
 
         <div id="indexProLoc">

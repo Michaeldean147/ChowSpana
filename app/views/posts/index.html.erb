@@ -1,9 +1,7 @@
-<center><h1 id="indexHeader">All Finds</h1></center>
 <div class="three column row centered">
   <div id="NavColumn" class="column">
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
-      <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
       <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
@@ -23,7 +21,7 @@
         <%= image_tag post.image.url, :size => "260x180" %>
       </div>
       <div id="indexProName">
-        <h3><%= link_to "#{post.productname}", post, {:style=>'color:#000000;', :class => "css_class"} %></h3>
+        <h1><%= link_to "#{post.productname}", post, {:class => "css_class"} %></h1>
       </div>
 
       <div id="indexProLoc">

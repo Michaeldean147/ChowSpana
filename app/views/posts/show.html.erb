@@ -1,9 +1,7 @@
-<center><h1 id="showHeader"><%=@post.productname%></h1></center>
 <div class="three column row centered">
   <div id="NavColumn" class="column">
     <div id="postShowNavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
-      <center id="userMenuLabel"><h4><%= "Menu" %></h4></center>
       <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center id="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
       <center id="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuHomeButton" %></center>
@@ -30,6 +28,10 @@
     <div id="indexPost">
       <div class="right floated center aligned two wide column">
         <%= image_tag @post.image.url, :size => "260x180" %>
+      </div>
+
+      <div>
+        <h1><%=@post.productname%></h1> 
       </div>
 
       <div>

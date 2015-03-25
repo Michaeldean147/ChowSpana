@@ -17,7 +17,23 @@ class FavoritesController < ApplicationController
 
   def oldest_sort
     @favorites = current_user.favorited_posts
-    render json: @favorites
+    data = []
+    @favorites.each do |fave|
+      hash = {}
+      hash[:productname] = fave.productname
+      hash[:user_id] = fave.user_id
+      hash[:city] = fave.city
+      hash[:state] = fave.state
+      hash[:username] = User.find(fave.user_id).username
+      hash[:price] = fave.price
+      hash[:image_name] = fave.image_file_name
+      data.push(hash)
+    end
+    render json: data
+  end
+
+  def newest_sort
+
   end
 
 end

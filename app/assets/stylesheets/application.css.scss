@@ -31,10 +31,14 @@
 #siteName{
   margin-top: 9px;
   margin-bottom: 4px;
+  font-family: 'Montserrat', sans-serif;
+  color: #B2B2B2;
 }
 
 #navBar{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(44%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  background: rgba(0,0,0,0.8);
+  -webkit-border-radius: 0px;
+  color: purple;
 }
 
 #navbarRight{
@@ -46,16 +50,28 @@
   color: #000000;
 }
 
+h2 a{
+  font-family: 'Montserrat', sans-serif;
+  color: #B2B2B2;
+}
+
+h3{
+  font-family: 'Montserrat', sans-serif;
+  color: #B2B2B2;
+}
+
+h5{
+  margin-top: 2%
+}
+
 #signupSegment{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(9%, #dd2326), color-stop(77%, #f22424), color-stop(100%, #8f0222), color-stop(100%, #6d0019));
   height: 600px;
-  -webkit-border-radius: 60px;
 }
 
 #signinSegment{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(83%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(9%, #dd2326), color-stop(77%, #f22424), color-stop(100%, #8f0222), color-stop(100%, #6d0019));
   height: 600px;
-  -webkit-border-radius: 60px;
 }
 
 // body{
@@ -63,8 +79,7 @@
 // }
 
 #browseWell{
-  -webkit-border-radius: 10px;
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(9%,rgba(221,35,38,1)), color-stop(77%,rgba(242,36,36,1)), color-stop(100%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1)));
+  background-color: purple
 }
 
 #popaisleImg{
@@ -141,28 +156,25 @@
 }
 
 #postIndexGrids{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  background-color: #EEEEEE;
   margin-right: 5%;
   margin-bottom: 3%;
-  -webkit-border-radius: 10px;
 }
 
 #NavColumn{
   width: 20%;
   float: left;
-  margin-left: 2%;
+  -webkit-border-radius: 0px;
 }
 
 #NavSegment{
-  height: 75%;
-  -webkit-border-radius: 10px;
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  background: rgba(0,0,0,0.8);
+  -webkit-border-radius: 0px;
 }
 
 #postShowNavSegment{
   height: 75%;
-  -webkit-border-radius: 10px;
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  background: rgba(0,0,0,0.8);
 }
 
 #userMenuLabel{
@@ -197,7 +209,8 @@
 }
 
 #indexHeader{
-  margin-left: 29%;
+  font-family: 'Montserrat', sans-serif;
+  color: #B2B2B2;
   text-decoration: underline;
 }
 
@@ -211,7 +224,9 @@ a:hover {
 }
 
 body{
-  background-image: url("/assets/junk30.png")
+  background-color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  //  background-image: url("/assets/junk30.png")
 }
 
 .postIndexFilterButton{
@@ -228,9 +243,8 @@ body{
 }
 
 .postFormGrid{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(239,197,202,1)), color-stop(25%,rgba(242,21,54,1)), color-stop(100%,rgba(241,142,153,1)));
+  background: #EEEEEE;
   margin-bottom: 3%;
-  -webkit-border-radius: 10px;
 }
 
 .postFormInput{
@@ -248,4 +262,8 @@ body{
 
 .faveFilterNewestButton{
   margin-top: 7%;
+}
+
+.userShowHeader{
+  height: 200em;
 }

@@ -27,6 +27,7 @@ class FavoritesController < ApplicationController
       hash[:username] = User.find(fave.user_id).username
       hash[:price] = fave.price
       hash[:image_name] = fave.image_file_name
+      hash[:image_url] = fave.image.url
       data.push(hash)
     end
     render json: data
@@ -44,6 +45,7 @@ class FavoritesController < ApplicationController
       hash[:username] = User.find(fave.user_id).username
       hash[:price] = fave.price
       hash[:image_name] = fave.image_file_name
+      hash[:image_url] = fave.image.url
       data.push(hash)
     end
     render json: data

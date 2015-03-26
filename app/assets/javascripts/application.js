@@ -43,6 +43,9 @@ $(document).ready(function() {
               '<div class="ui grid postIndexMainGrid"> \
                 <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
                   <div id="indexPost"> \
+                    <div id="postIndexPic" class="right floated center aligned two wide column"> \
+                      <img src="'+ data[i].image_url +'" height="180" width="260"> \
+                    </div> \
                     <div id="indexProName"> \
                       <h1><a href="posts/' + data[i].id +'"class="css_class">' + data[i].productname + '</a></h1> \
                     </div> \

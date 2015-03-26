@@ -17,11 +17,14 @@
   <div id="postIndexGrids" class="right floated left aligned ten wide column">
     <center>
       <h1 id="indexHeader"><%="All Finds" %></h1>
+      <div class="apple_pagination">
+        <%= will_paginate @posts, :container => false %>
+      </div>
     </center>
   </div>
 </div>
 
-<% @posts.reverse.each do |post| %>
+<% @posts.each do |post| %>
 <div class="ui grid postIndexMainGrid">
   <div id="postIndexGrids" class="right floated left aligned ten wide column">
     <div id="indexPost">
@@ -51,3 +54,14 @@
   </div>
 </div>
 <% end %>
+
+<div class="ui grid">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <div class="apple_pagination">
+      <%= will_paginate @posts, :container => false %>
+      <div class="page_info">
+        <%= page_entries_info @posts %>
+      </div>
+    </div>
+  </div>
+</div>

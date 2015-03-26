@@ -14,7 +14,8 @@ Rails.application.routes.draw do
    post '/sign-in' => 'signin#create'
    get '/sign-out' => 'signin#destroy', as: :signout
    get '/search' => 'posts#search'
-   get '/sort' => 'favorites#oldest_sort'
+   get '/old-sort' => 'favorites#oldest_sort'
+   get '/new-sort' => 'favorites#newest_sort'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

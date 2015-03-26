@@ -4,9 +4,9 @@
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center class="faveFilterOldestButton"><%= link_to "Filter: By Oldest", posts_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="faveFilterNewestButton"><%= link_to "Filter: By Newest", favorites_path, class:"ui small button userMenuNewPostButton" %></center>
-      <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
-      <center id="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuNewPostButton" %></center>
-      <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
+      <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center class="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
       <div id="indexNavFilter" class="ui small icon input">
         <input type="text" placeholder="Filter Finds">
         <i class="search icon"></i>
@@ -15,11 +15,18 @@
   </div>
 </div>
 
+<div class="ui grid userShowHeader">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <center>
+      <h1 id="indexHeader"><%="Your Favorites" %></h1>
+    </center>
+  </div>
+</div>
 
 <div class="favorites">
   <% @favorites.reverse.each do |favorite| %>
 
-  <div id="postIndexMainGrid" class="ui grid">
+  <div class="ui grid postIndexMainGrid">
     <div id="postIndexGrids" class="right floated left aligned ten wide column">
       <div id="indexPost">
         <div id="postIndexPic" class="right floated center aligned two wide column">

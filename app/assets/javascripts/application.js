@@ -15,43 +15,55 @@
 //= require_tree .
 //
 $(document).ready(function() {
+
   $('.faveFilterOldestButton').on('click', function() {
     event.preventDefault()
-      $.ajax({
-      url: "/sort",
-      method: 'GET',
-      dataType: "json"
-    }).done(
-      function(data){
-        $(".favorites").remove()
-        $("body").append("<div class='favorites'></div>")
-        for (var i = 0; i < data.length; i++) {
-          console.log(data)
-          $(".favorites").append(
-            '<div id="postIndexMainGrid" class="ui grid"> \
-              <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
-                <div id="indexPost"> \
-                  <div id="indexProName"> \
-                    <h1><a href="posts/' + data[i].id +'"class="css_class">' + data[i].productname + '</a></h1> \
-                  </div> \
-                  <div id="indexProLoc"> \
-                   <h5> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h5> \
-                  </div> \
-                  <div id="indexProPrice"> \
-                   <h5> Price: ' + data[i].price + '</h5> \
-                  </div> \
-                  <div id="indexProUser"> \
-                   <h5> \
-                   <a href="users/' + data[i].user_id +'" style="color:#000000;" class="css_class">Posted By: ' + data[i].username + '</a> \
-                   </h5> \
+    sortType = "/old-sort"
+    ajaxSort(sortType)
+  });
+
+  $('.faveFilterNewestButton').on('click', function() {
+    event.preventDefault()
+    sortType = "/new-sort"
+    ajaxSort(sortType)
+  });
+
+       function ajaxSort(type){
+        $.ajax({
+        url: type,
+        method: 'GET',
+        dataType: "json"
+        }).done(
+        function(data){
+          $(".postIndexMainGrid").remove()
+          // $("body").append("<div class='favorites'></div>")
+          for (var i = 0; i < data.length; i++) {
+            console.log(data)
+            $(".favorites").append(
+              '<div class="ui grid postIndexMainGrid"> \
+                <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
+                  <div id="indexPost"> \
+                    <div id="indexProName"> \
+                      <h1><a href="posts/' + data[i].id +'"class="css_class">' + data[i].productname + '</a></h1> \
+                    </div> \
+                    <div id="indexProLoc"> \
+                     <h5> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h5> \
+                    </div> \
+                    <div id="indexProPrice"> \
+                     <h5> Price: ' + data[i].price + '</h5> \
+                    </div> \
+                    <div id="indexProUser"> \
+                     <h5> \
+                     <a href="users/' + data[i].user_id +'" style="color:#000000;" class="css_class">Posted By: ' + data[i].username + '</a> \
+                     </h5> \
+                    </div> \
                   </div> \
                 </div> \
-              </div> \
-            </div>')
-        }
-      }
-    )
-  });
+              </div>')
+            }
+          }
+        )
+    }
 });
 
 // <div class="favorites">

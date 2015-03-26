@@ -1,37 +1,44 @@
 <div class="three column row centered">
   <div id="NavColumn" class="column">
     <div id="postShowNavSegment" class="ui segment">
-      <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
-      <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
-      <center id="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
-      <center id="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuHomeButton" %></center>
-      <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
+      <center class="userMenuButtons"><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
+      <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuHomeButton" %></center>
+      <center class="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
 
       <center><h3 id="SegmentHeader"><%= "Post Options" %></h3></center>
       <% if current_user && current_user.id == @post.user_id %>
-      <center id="userMenuButtons"><%= link_to "Edit Post", edit_post_path(@post), class:"ui small button userMenuNewPostButton" %></center>
-      <center id="userMenuButtons"><%= link_to link_to "Destroy Post", @post , method: :delete, data: {confirm: "Are You Sure?"}, class:"ui small button userMenuNewPostButton" %></center>
+      <center class="userMenuButtons"><%= link_to "Edit Post", edit_post_path(@post), class:"ui small button userMenuNewPostButton" %></center>
+      <center class="userMenuButtons"><%= link_to "Destroy Post", @post , method: :delete, data: {confirm: "Are You Sure?"}, class:"ui small button userMenuNewPostButton" %></center>
       <% else %>
         <% if !current_user.favorited_posts.include?(@post) %>
-          <center id="userMenuButtons">
+          <center class="userMenuButtons">
             <%= link_to "Favorite This Post!", favorites_path(post: @post), method: :post, class:"ui small button userMenuNewPostButton" %>
           </center>
         <% else %>
-          <%= "You Have Already Favorited This Post" %>
+        <center class="userMenuButtons">
+          <%= link_to "Remove From Favorites", root_path, class:"ui small button userMenuNewPostButton" %>
+        </center>
         <% end %>
       <% end %>
     </div>
   </div>
 </div>
-<div id="postIndexMainGrid" class="ui grid">
+
+<div class="ui grid userShowHeader">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <center>
+      <h1 id="indexHeader"><%=@post.productname%></h1>
+    </center>
+  </div>
+</div>
+
+<div class="ui grid postIndexMainGrid">
   <div id="postIndexGrids" class="right floated left aligned ten wide column">
     <div id="indexPost">
       <div class="right floated center aligned two wide column">
         <%= image_tag @post.image.url, :size => "260x180" %>
-      </div>
-
-      <div>
-        <h1><%=@post.productname%></h1> 
       </div>
 
       <div>

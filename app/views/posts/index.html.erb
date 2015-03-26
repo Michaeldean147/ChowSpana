@@ -2,9 +2,9 @@
   <div id="NavColumn" class="column">
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
-      <center id="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
-      <center id="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
-      <center id="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
+      <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
+      <center class="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
       <div id="indexNavFilter" class="ui small icon input">
         <input class="searchBox" type="text" placeholder="Filter Finds">
         <i id="searchGlass" class="search icon"></i>
@@ -13,8 +13,16 @@
   </div>
 </div>
 
+<div class="ui grid userShowHeader">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <center>
+      <h1 id="indexHeader"><%="All Finds" %></h1>
+    </center>
+  </div>
+</div>
+
 <% @posts.reverse.each do |post| %>
-<div id="postIndexMainGrid" class="ui grid indexGrids">
+<div class="ui grid postIndexMainGrid">
   <div id="postIndexGrids" class="right floated left aligned ten wide column">
     <div id="indexPost">
       <div id="postIndexPic" class="right floated center aligned two wide column">

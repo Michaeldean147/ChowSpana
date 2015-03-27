@@ -28,7 +28,7 @@
   margin-top: 5px;
 }
 
-#siteName{
+.siteName{
   margin-top: 9px;
   margin-bottom: 4px;
   font-family: 'Montserrat', sans-serif;
@@ -43,6 +43,7 @@
 
 #navbarRight{
   margin-top: -16px;
+  color: #B2B2B2
 }
 
 #logoLink{
@@ -64,15 +65,35 @@ h5{
   margin-top: 2%
 }
 
+a{
+  color: #000000
+}
+
+#navbarRight a{
+  color: #B2B2B2;
+}
+
 #signupSegment{
   background-color: #EEEEEE;
   height: 600px;
+  -webkit-border-radius: 1em;
 }
 
 #signinSegment{
   background-color: #EEEEEE;
   height: 600px;
+  -webkit-border-radius: 1em;
 }
+
+#postIndexGrids h1{
+  color: #000000
+}
+
+#postIndexGrids h5{
+  color: #000000
+}
+
+
 
 // body{
 //   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1)));
@@ -159,6 +180,7 @@ h5{
 #postShowNavSegment{
   height: 75%;
   background: rgba(0,0,0,0.8);
+  -webkit-border-radius: 0px;
 }
 
 #userMenuLabel{
@@ -205,6 +227,7 @@ h5{
 
 a:hover {
   text-decoration: underline;
+  color: #000000;
 }
 
 body{
@@ -248,6 +271,10 @@ body{
   margin-top: 7%;
 }
 
+.postIndexMainGrid  #postIndexGrids{
+  -webkit-border-radius: 1em;
+}
+
 .userShowHeader{
   height: 200em;
 }
@@ -260,7 +287,7 @@ body{
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.3em; }
     .apple_pagination .disabled {
-      color: #aaaaaa; }
+      color: #000000; }
       .apple_pagination .current {
         font-style: normal;
         font-weight: bold;

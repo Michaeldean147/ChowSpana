@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where("user_id = #{@user.id}").paginate(:page => params[:page]).order('created_at DESC')
   end
 
   def new

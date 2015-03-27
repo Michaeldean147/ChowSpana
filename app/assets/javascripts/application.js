@@ -16,6 +16,17 @@
 //
 $(document).ready(function() {
 
+  $('#searchGlass').on('click', function(){
+    var searchTerm = $('.searchBox').val()
+
+    $.ajax({
+      url: '/search',
+      method: 'GET',
+      dataType: "json",
+      data: {'keyTerm': searchTerm}
+    })
+  })
+
   $('.faveFilterOldestButton').on('click', function() {
     event.preventDefault()
     sortType = "/old-sort"
@@ -68,39 +79,3 @@ $(document).ready(function() {
         )
     }
 });
-
-// <div class="favorites">
-// <% @favorites.reverse.each do |favorite| %>
-//
-// <div id="postIndexMainGrid" class="ui grid">
-// <div id="postIndexGrids" class="right floated left aligned ten wide column">
-// <div id="indexPost">
-// <div id="postIndexPic" class="right floated center aligned two wide column">
-// <%= image_tag favorite.image.url, :size => "260x180" %>
-// </div>
-// <div id="indexProName">
-// <h3><%= link_to "#{favorite.productname}", favorite, {:style=>'color:#000000;', :class => "css_class"} %></h3>
-// </div>
-//
-// <div id="indexProLoc">
-// <h5><%= "Spotted In: #{favorite.city}, #{favorite.state}"%></h5>
-// </div>
-//
-// <div id="indexProPrice">
-// <h5><%= "Price: #{favorite.price}"%></h5>
-// </div>
-//
-// <div id="indexProUser">
-// <h5>
-// <%= "Posted By User:" %>
-// <%=link_to "#{favorite.user.username}", favorite.user, {:style=>'color:#000000;', :class => "css_class"} %>
-// </h5>
-// </div>
-//
-// </div>
-// </div>
-// </div>
-//
-// <% end %>
-//
-// </div>

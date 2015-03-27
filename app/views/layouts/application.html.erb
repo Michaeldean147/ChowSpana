@@ -11,9 +11,10 @@
   <div id="navBar" class="ui menu">
     <div id="left menu">
       <div id="logo">
-        <a id="logoLink" href="/"><%= image_tag "118.png", height: 30, :id => 'navbar_img'%>
-        <h4 id="siteName">ChowSpana</h4>
-        <%= image_tag "92.png", height: 30, :id => 'navbar_img'%>
+        <a id="logoLink" href="/">
+          <%= image_tag "118.png", height: 30, :id => 'navbar_img'%>
+          <h4 class="siteName">ChowSpana</h4>
+          <%= image_tag "92.png", height: 30, :id => 'navbar_img'%>
         </a>
       </div>
     </div>
@@ -22,7 +23,7 @@
       <div id="navbarUsername" class="item">
         <p id="navbarRight">
           <% if current_user %>
-          <%= link_to "#{current_user.username}", current_user, {:class => "css_class"} %> | <%= link_to "Sign Out", signout_path, {:class => "css_class"} %>
+            <%= link_to "#{current_user.username}", current_user %> | <%= link_to "Sign Out", signout_path %>
           <% else %>
           <%= "Welcome" %>
           <% end %>
@@ -34,7 +35,5 @@
   <div id="yieldDiv">
     <%= yield %>
   </div>
-
-
 </body>
 </html>

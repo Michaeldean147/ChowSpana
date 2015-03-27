@@ -5,7 +5,6 @@
       <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
       <center class="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuHomeButton" %></center>
-      <center class="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
 
       <center><h3 id="SegmentHeader"><%= "Post Options" %></h3></center>
       <% if current_user && current_user.id == @post.user_id %>

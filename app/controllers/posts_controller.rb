@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    # @posts = Post.all.sort_by &:created_at
-    @posts = Post.order('id DESC').paginate(:page => params[:page], :per_page => 3)
+     # @posts = Post.all.sort_by &:created_at
+     @posts = Post.paginate(:page => params[:page]).order('created_at DESC')
   end
 
   def new
@@ -31,7 +31,9 @@ class PostsController < ApplicationController
   end
 
   def search
-    render json: Post.all.reverse
+    searchTerm = params[:keyTerm]
+    puts "***************#{searchTerm}************"
+    @posts = Post.where("productname = #{searchTerm}")
   end
 
   def edit

@@ -31,9 +31,9 @@ class PostsController < ApplicationController
   end
 
   def search
-    searchTerm = params[:keyTerm]
+    searchTerm = params[:keyTerm].downcase
     puts "***************#{searchTerm}************"
-    @posts = Post.where("productname = #{searchTerm}")
+    @posts = Post.where("lower(productname) like ? or lower(city) like ?", "%#{searchTerm}%", "%#{searchTerm}%")
   end
 
   def edit

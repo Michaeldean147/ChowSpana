@@ -1,0 +1,30 @@
+<% @posts.each do |post| %>
+<div class="ui grid postIndexMainGrid">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <div id="indexPost">
+      <div id="postIndexPic" class="right floated center aligned two wide column">
+        <%= image_tag post.image.url, :size => "260x180" %>
+      </div>
+      <div id="indexProName">
+        <h1><%= link_to "#{post.productname}", post %></h1>
+      </div>
+
+      <div id="indexProLoc">
+        <h5><%= "Spotted In: #{post.city}, #{post.state}"%></h5>
+      </div>
+
+      <div id="indexProPrice">
+        <h5><%= "Price: #{post.price}"%></h5>
+      </div>
+
+      <div id="indexProUser">
+        <h5>
+          <%= "Posted By:" %>
+          <%=link_to "#{post.user.username}", post.user, {:style=>'color:#000000;', :class => "css_class"} %>
+        </h5>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% end %>

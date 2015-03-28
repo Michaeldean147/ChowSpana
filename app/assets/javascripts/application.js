@@ -16,16 +16,15 @@
 //
 $(document).ready(function() {
 
-  $('#searchGlass').on('click', function(){
-    var searchTerm = $('.searchBox').val()
-
-    $.ajax({
-      url: '/search',
-      method: 'GET',
-      dataType: "json",
-      data: {'keyTerm': searchTerm}
-    })
-  })
+  // $('#searchGlass').on('click', function(){
+  //   var searchTerm = $('.searchBox').val()
+  //   $.ajax({
+  //     url: '/search',
+  //     method: 'GET',
+  //     dataType: "json",
+  //     data: {'keyTerm': searchTerm}
+  //   })
+  // })
 
   $('.faveFilterOldestButton').on('click', function() {
     event.preventDefault()
@@ -39,43 +38,42 @@ $(document).ready(function() {
     ajaxSort(sortType)
   });
 
-       function ajaxSort(type){
-        $.ajax({
-        url: type,
-        method: 'GET',
-        dataType: "json"
-        }).done(
-        function(data){
-          $(".postIndexMainGrid").remove()
-          // $("body").append("<div class='favorites'></div>")
-          for (var i = 0; i < data.length; i++) {
-            console.log(data)
-            $(".favorites").append(
-              '<div class="ui grid postIndexMainGrid"> \
-                <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
-                  <div id="indexPost"> \
-                    <div id="postIndexPic" class="right floated center aligned two wide column"> \
-                      <img src="'+ data[i].image_url +'" height="180" width="260"> \
-                    </div> \
-                    <div id="indexProName"> \
-                      <h1><a href="posts/' + data[i].id +'"class="css_class">' + data[i].productname + '</a></h1> \
-                    </div> \
-                    <div id="indexProLoc"> \
-                     <h5> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h5> \
-                    </div> \
-                    <div id="indexProPrice"> \
-                     <h5> Price: ' + data[i].price + '</h5> \
-                    </div> \
-                    <div id="indexProUser"> \
-                     <h5> \
-                     <a href="users/' + data[i].user_id +'" style="color:#000000;" class="css_class">Posted By: ' + data[i].username + '</a> \
-                     </h5> \
-                    </div> \
+    function ajaxSort(type){
+      $.ajax({
+      url: type,
+      method: 'GET',
+      dataType: "json"
+      }).done(
+      function(data){
+        $(".postIndexMainGrid").remove()
+        for (var i = 0; i < data.length; i++) {
+          console.log(data)
+          $(".favorites").append(
+            '<div class="ui grid postIndexMainGrid"> \
+              <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
+                <div id="indexPost"> \
+                  <div id="postIndexPic" class="right floated center aligned two wide column"> \
+                    <img src="'+ data[i].image_url +'" height="180" width="260"> \
+                  </div> \
+                  <div id="indexProName"> \
+                    <h1><a href="posts/' + data[i].id +'"class="css_class">' + data[i].productname + '</a></h1> \
+                  </div> \
+                  <div id="indexProLoc"> \
+                   <h5> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h5> \
+                  </div> \
+                  <div id="indexProPrice"> \
+                   <h5> Price: ' + data[i].price + '</h5> \
+                  </div> \
+                  <div id="indexProUser"> \
+                   <h5> \
+                   <a href="users/' + data[i].user_id +'" style="color:#000000;" class="css_class">Posted By: ' + data[i].username + '</a> \
+                   </h5> \
                   </div> \
                 </div> \
-              </div>')
-            }
+              </div> \
+            </div>')
           }
-        )
+        }
+      )
     }
 });

@@ -4,10 +4,14 @@
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
-      <div id="indexNavFilter" class="ui small icon input">
-        <input class="searchBox" type="text" placeholder="Search All Finds">
-        <i id="searchGlass" class="search icon"></i>
-      </div>
+      <center>
+        <div id="indexNavFilter" class="ui small icon input">
+          <form id="form_id" action="/search" method="get">
+            <i id="searchGlass" class="search icon"></i>
+            <input name="keyTerm" class="searchBox" type="text" placeholder="Search All Finds">
+          </form>
+        </div>
+      </center>
     </div>
   </div>
 </div>

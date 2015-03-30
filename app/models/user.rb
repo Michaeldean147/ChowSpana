@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :favorites
-  has_many :favorited_posts, through: :favorites, source: :post
+  has_many :favorited_posts, through: :favorites, source: :post,  dependent: :destroy
 
   validates :username, presence: true
   validates :username, uniqueness: true

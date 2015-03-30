@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require semantic-ui
 //= require_tree .
 //
 $(document).ready(function() {
@@ -25,6 +26,10 @@ $(document).ready(function() {
   //     data: {'keyTerm': searchTerm}
   //   })
   // })
+
+  $('.ui.sticky').sticky({
+    context: '.pageFooter'
+  });
 
   $('.faveFilterOldestButton').on('click', function() {
     event.preventDefault()
@@ -73,6 +78,12 @@ $(document).ready(function() {
               </div> \
             </div>')
           }
+          $('favorites').append(
+          '<div class="ui grid pageFooter"> \
+            <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
+            </div> \
+          </div>'
+          )
         }
       )
     }

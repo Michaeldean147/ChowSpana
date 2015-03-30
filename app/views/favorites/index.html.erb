@@ -1,5 +1,5 @@
 <div class="three column row centered">
-  <div id="NavColumn" class="column">
+  <div id="NavColumn" class="column ui sticky">
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center class="faveFilterOldestButton"><%= link_to "Filter: By Oldest", posts_path, class:"ui small button userMenuNewPostButton" %></center>
@@ -53,4 +53,9 @@
 
   <% end %>
 
+</div>
+
+<div class="ui grid pageFooter">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+  </div>
 </div>

@@ -11,18 +11,22 @@
 </div> -->
 
 <div class="ui two column centered grid">
-
   <% if current_user %>
-  <h1>current_user.username</h1>
-  <div class="column">
-    <div id="browseWell" class="ui segment">
-      <center><h2><%= link_to "View All Finds!", posts_path, {:class => "css_class"}%></h2></center>
+  <div class="three column row centered">
+    <div class="column">
+      <div class="browseWell ui segment">
+        <center><h2><%= link_to "View All Finds!", posts_path %></h2></center>
+      </div>
     </div>
-    <div id="browseWell" class="ui segment">
-      <center><h2><%= link_to "View Your Favorites!", favorites_path, {:class => "css_class"}%></h2></center>
+    <div class="column">
+      <div class="browseWell ui segment">
+        <center><h2><%= link_to "View Your Favorites!", favorites_path %></h2></center>
+      </div>
     </div>
-    <div id="browseWell" class="ui segment">
-      <center><h2><%= link_to "Post A Find!", new_post_path, {:class => "css_class"}%></h2></center>
+    <div class="column">
+      <div class="browseWell ui segment">
+        <center><h2><%= link_to "Post A Find!", new_post_path %></h2></center>
+      </div>
     </div>
   </div>
 
@@ -56,7 +60,6 @@
             </div>
           </a>
         </div>
-
-    <% end %>
     </div>
+  <% end %>
 </div>

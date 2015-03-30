@@ -29,11 +29,8 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem "paperclip", "~> 4.2"
 gem 'will_paginate', '~> 3.0.5'
-# Use unicorn as the app server
-# gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :test, :development do
+  gem 'capybara'
+  gem 'rspec-rails'
+end

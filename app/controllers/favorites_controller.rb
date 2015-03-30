@@ -11,8 +11,21 @@ class FavoritesController < ApplicationController
     if @favorite.save
       redirect_to @post, notice: 'Favorited!'
     else
-      redirect_to @post, error: 'There was a problem'
+      render @post, error: 'There was a problem'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    puts "*"*80
+    p params
+    @favorite = Favorite.find_by(post_id: @post)
+    if current_user.id == @favorite.user_id
+      @favorite.destroy
+       redirect_to favorites_path
+     else
+       render @post
+     end
   end
 
   def oldest_sort

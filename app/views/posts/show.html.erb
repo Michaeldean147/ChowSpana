@@ -1,5 +1,5 @@
 <div class="three column row centered">
-  <div id="NavColumn" class="column">
+  <div id="NavColumn" class="column ui sticky">
     <div id="postShowNavSegment" class="ui segment">
       <center class="userMenuButtons"><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
@@ -17,7 +17,7 @@
           </center>
         <% else %>
         <center class="userMenuButtons">
-          <%= link_to "Remove From Favorites", root_path, class:"ui small button userMenuNewPostButton" %>
+          <%= link_to "Remove From Favorites", favorite_path(@post) , method: :delete, data: {confirm: "Are You Sure?"}, class:"ui small button userMenuNewPostButton" %>
         </center>
         <% end %>
       <% end %>
@@ -66,5 +66,10 @@
       </div>
 
     </div>
+  </div>
+</div>
+
+<div class="ui grid pageFooter">
+  <div id="postIndexGrids" class="right floated left aligned ten wide column">
   </div>
 </div>

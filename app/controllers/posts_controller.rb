@@ -60,6 +60,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def map
+    @posts = Post.all
+
+
+     @locations = @posts.map do |post|
+       if post.latitude.nil?
+         nil
+       else
+         [post.latitude, post.longitude]
+       end
+    end.compact
+    # render json: @locations
+  end
+
   private
 
   def post_params

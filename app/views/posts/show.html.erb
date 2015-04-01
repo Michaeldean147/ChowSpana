@@ -5,6 +5,7 @@
       <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
       <center class="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuHomeButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View All Finds On Map", map_path, class:"ui small button userMenuHomeButton" %></center>
 
       <center><h3 id="SegmentHeader"><%= "Post Options" %></h3></center>
       <% if current_user && current_user.id == @post.user_id %>
@@ -63,6 +64,17 @@
           <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %><br>
           <%="Posted on #{@post.created_at}"%>
         </h5>
+      </div>
+
+      <div class="postStaticMap">
+        <span class="staticMapLink">Click To View/Hide Location</span>
+        <div class="postStaticImage hidden">
+          <% if @post.latitude.nil? || @post.longitude.nil? %>
+          <h2>Location Details Invalid</h2>
+          <% else %>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@post.latitude},#{@post.longitude}&zoom=15&size=400x200&markers=color:red%7C#{@post.latitude},#{@post.longitude}"%>
+          <% end %>
+        </div>
       </div>
 
     </div>

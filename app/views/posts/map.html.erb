@@ -1,0 +1,36 @@
+<div class="three column row centered">
+  <div id="NavColumn" class="column ui">
+    <div id="NavSegment" class="ui segment">
+      <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
+      <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuHomeButton" %></center>
+      <center>
+        <div id="indexNavFilter" class="ui small icon input">
+          <form id="form_id" action="/search" method="get">
+            <input name="keyTerm" class="searchBox" type="text" placeholder="Enter Product or City">
+          </form>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div id="postIndexGrids" class="right floated left aligned eleven wide column">
+    <div id='map'></div>
+  </div>
+</div>
+
+<script charset="utf-8">
+  $(function() {
+    L.mapbox.accessToken = 'pk.eyJ1IjoibWljaGFlbGRlYW4xNDciLCJhIjoiWjFIU0xOTSJ9.Dny6ilJR7MyqNy5HfffYgQ';
+    var map = L.mapbox.map('map', 'michaeldean147.lk8ij07j')
+      .setView([39.504, -99.976], 4);
+
+    var markers = <%= raw @locations.to_json %>;
+    markers.forEach(function(coords) {
+      L.marker(coords).addTo(map);
+    });
+  });
+</script>

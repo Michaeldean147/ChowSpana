@@ -1,14 +1,14 @@
 <div class="three column row centered">
-  <div id="NavColumn" class="column ui sticky">
+  <div id="NavColumn" class="column ui">
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="userMenuButtons"><%= link_to "View Your Favorites", favorites_path, class:"ui small button userMenuFavoritesButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View All Finds On Map", map_path, class:"ui small button userMenuHomeButton" %></center>
       <center>
         <div id="indexNavFilter" class="ui small icon input">
           <form id="form_id" action="/search" method="get">
-            <i id="searchGlass" class="search icon"></i>
-            <input name="keyTerm" class="searchBox" type="text" placeholder="Search All Finds">
+            <input name="keyTerm" class="searchBox" type="text" placeholder="Enter Product or City">
           </form>
         </div>
       </center>
@@ -59,7 +59,8 @@
           <% if post.latitude.nil? || post.longitude.nil? %>
             <h2>Location Details Invalid</h2>
           <% else %>
-            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{post.latitude},#{post.longitude}&zoom=15&size=400x200&markers=color:red%7C#{post.latitude},#{post.longitude}"%>
+          <%= image_tag "http://api.tiles.mapbox.com/v4/michaeldean147.lk8hfgn9/#{post.longitude},#{post.latitude},4/400x200.jpg?access_token=pk.eyJ1IjoibWljaGFlbGRlYW4xNDciLCJhIjoiWjFIU0xOTSJ9.Dny6ilJR7MyqNy5HfffYgQ"%>
+            <!-- <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{post.latitude},#{post.longitude}&zoom=15&size=400x200&markers=color:red%7C#{post.latitude},#{post.longitude}"%> -->
           <% end %>
         </div>
       </div>
@@ -78,3 +79,17 @@
     </div>
   </div>
 </div>
+
+
+<!-- <center>
+  <div id="searchDropdownButton" class="ui floating dropdown labeled button">
+    <span class="text">Search Finds</span>
+    <div class="menu">
+      <div id="indexNavFilter" class="ui icon search input">
+        <form id="form_id" action="/search" method="get">
+          <input name="keyTerm" class="searchBox" type="text" placeholder="Product Name or City">
+        </form>
+      </div>
+    </div>
+  </div>
+</center> -->

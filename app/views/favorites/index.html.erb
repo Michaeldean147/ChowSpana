@@ -1,14 +1,14 @@
 
 
 <div class="three column row centered">
-  <div id="NavColumn" class="column ui sticky">
+  <div id="NavColumn" class="column ui">
     <div id="NavSegment" class="ui segment">
       <center><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center class="faveFilterOldestButton"><%= link_to "Filter: By Oldest", posts_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="faveFilterNewestButton"><%= link_to "Filter: By Newest", favorites_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
       <center class="userMenuButtons"><%= link_to "View All Finds", posts_path, class:"ui small button userMenuNewPostButton" %></center>
-      <center class="userMenuButtons"><%= link_to "Go Home", root_path, class:"ui small button userMenuHomeButton" %></center>
+      <center class="userMenuButtons"><%= link_to "View All Finds On Map", map_path, class:"ui small button userMenuHomeButton" %></center>
     </div>
   </div>
 </div>

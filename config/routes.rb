@@ -16,6 +16,7 @@ Rails.application.routes.draw do
    get '/search' => 'posts#search'
    get '/old-sort' => 'favorites#oldest_sort'
    get '/new-sort' => 'favorites#newest_sort'
+   get '/map' =>'posts#map'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

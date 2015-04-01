@@ -26,10 +26,17 @@ $(document).ready(function() {
   //     data: {'keyTerm': searchTerm}
   //   })
   // })
-
+  
   $('.ui.sticky').sticky({
     context: '.pageFooter'
   });
+
+  $('.dropdown')
+  .dropdown({
+    // you can use any ui transition
+    transition: 'drop'
+  })
+  ;
 
   $('.staticMapLink').on('click',function(){
     $(this.nextElementSibling).toggleClass("hidden")

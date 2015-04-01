@@ -72,7 +72,9 @@ class PostsController < ApplicationController
     :city,
     :state,
     :image,
-    :user_id
+    :user_id,
+    :latitude,
+    :longitude
     )
   end
 

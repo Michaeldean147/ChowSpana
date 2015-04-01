@@ -1,5 +1,17 @@
 class Post < ActiveRecord::Base
 
+  def full_address
+    [address, city, state].compact.join(', ')
+  end
+  #
+  # geocoded_by full_address(:address,:city,:state)
+  # def full_address
+  #   "#{self.address}, #{self.city}, #{self.state}"
+  # end
+
+  geocoded_by :full_address
+
+  after_validation :geocode, :if => :address_changed?
 
   self.per_page = 3
 

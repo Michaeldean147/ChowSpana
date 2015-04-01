@@ -31,6 +31,10 @@ $(document).ready(function() {
     context: '.pageFooter'
   });
 
+  $('.staticMapLink').on('click',function(){
+    $(this.nextElementSibling).toggleClass("hidden")
+  })
+
   $('.faveFilterOldestButton').on('click', function() {
     event.preventDefault()
     sortType = "/old-sort"

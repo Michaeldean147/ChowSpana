@@ -214,6 +214,10 @@ a{
   margin-top: 0%;
 }
 
+.hidden{
+  display: none;
+}
+
 #indexHeader{
   font-family: 'Montserrat', sans-serif;
   color: #B2B2B2;
@@ -277,6 +281,11 @@ body{
 
 .userShowHeader{
   height: 200em;
+}
+
+.staticMapLink:hover{
+  text-decoration: underline;
+  color: #000000;
 }
 
 .apple_pagination {

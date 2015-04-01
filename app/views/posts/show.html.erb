@@ -1,5 +1,5 @@
 <div class="three column row centered">
-  <div id="NavColumn" class="column ui sticky">
+  <div id="NavColumn" class="column">
     <div id="postShowNavSegment" class="ui segment">
       <center class="userMenuButtons"><h3 id="NavSegmentHeader"><%= "Hello, #{current_user.username}" %></h3></center>
       <center class="userMenuButtons"><%= link_to "Post A Find", new_post_path, class:"ui small button userMenuNewPostButton" %></center>
@@ -66,10 +66,5 @@
       </div>
 
     </div>
-  </div>
-</div>
-
-<div class="ui grid pageFooter">
-  <div id="postIndexGrids" class="right floated left aligned ten wide column">
   </div>
 </div>

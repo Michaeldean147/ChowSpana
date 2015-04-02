@@ -1,6 +1,6 @@
 development:
   access_key_id: ENV["AWSKEY"]
-  secret_access_key: ENV["AWSKEYSEC"]
+  secret_access_key:  ENV["AWSKEYSEC"]
 
 production:
   access_key_id: ENV["AWSKEY"]

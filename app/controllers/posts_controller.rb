@@ -64,14 +64,38 @@ class PostsController < ApplicationController
     @posts = Post.all
 
 
-     @locations = @posts.map do |post|
-       if post.latitude.nil?
-         nil
-       else
-         [post.latitude, post.longitude]
-       end
+    #  @locations = @posts.map do |post|
+    #    if post.latitude.nil?
+    #      nil
+    #    else
+    #      [post.latitude, post.longitude]
+    #    end
+    # end.compact
+    # render json: @locations
+    @locations = @posts.map do |post|
+      if post.latitude.nil?
+        nil
+      else
+        {
+          type: 'Feature',
+          "geometry" => { "type"=> "Point", "coordinates"=> [post.longitude, post.latitude]},
+          "properties" => {
+            "image"=> post.image.url,
+            "marker-symbol"=> "star",
+            "marker-color"=> "#ff8888",
+            "marker-size"=> "large",
+            "product_name"=> post.productname,
+            "post_id"=> post.id,
+            "city"=> post.city,
+            "state"=> post.state
+          }
+        }
+      end
     end.compact
     # render json: @locations
+
+
+
   end
 
   private

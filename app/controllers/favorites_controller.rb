@@ -2,9 +2,6 @@ class FavoritesController < ApplicationController
 
   def index
     @favorites = current_user.favorited_posts
-    puts '*/n' * 50
-    e =  ENV['AWSKEY']
-    puts e
   end
 
   def create

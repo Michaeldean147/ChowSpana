@@ -81,8 +81,8 @@ Rails.application.configure do
     :s3_host_name =>  's3-us-west-1.amazonaws.com',
     :s3_credentials => {
       :bucket => 'chowspana',
-      :access_key_id => ENV['AWSKEY'],
-      :secret_access_key => ENV['AWSKEYSEC']
+      :access_key_id => ENV['S3_AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['S3_AWS_SECRET_ACCESS_KEY']
     }
   }
 end

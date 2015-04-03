@@ -27,11 +27,13 @@
   <div class="ui grid postIndexMainGrid">
     <div id="postIndexGrids" class="right floated left aligned ten wide column">
       <div id="indexPost">
-        <div id="postIndexPic" class="right floated center aligned two wide column">
-          <%= image_tag favorite.image.url, :size => "260x180" %>
-        </div>
+        <center>
         <div id="indexProName">
           <h1><%= link_to "#{favorite.productname}", favorite, {:class => "css_class"} %></h1>
+        </div>
+        
+        <div id="postIndexPic" class="two wide column">
+          <%= image_tag favorite.image.url %>
         </div>
 
         <div id="indexProLoc">
@@ -45,10 +47,10 @@
         <div id="indexProUser">
           <h5>
             <%= "Posted By:" %>
-            <%=link_to "#{favorite.user.username}", favorite.user, {:style=>'color:#000000;', :class => "css_class"} %>
+            <%=link_to "#{favorite.user.username}", favorite.user %>
           </h5>
         </div>
-
+      </center>
       </div>
     </div>
   </div>

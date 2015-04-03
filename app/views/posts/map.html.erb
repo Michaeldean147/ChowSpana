@@ -32,8 +32,8 @@
     markers.forEach(function(location) {
       console.log(location.properties.image)
         L.marker([location.geometry.coordinates[1], location.geometry.coordinates[0]]).bindPopup(
-          '<div>\
-            <img src="'+ location.properties.image+ '" alt="" height="100" width="120">\
+          '<div class="mapPostImage">\
+            <img src="'+ location.properties.image+ '" alt="">\
           </div>\
           <div>\
             <h5>'+ location.properties.product_name +'</h5>\

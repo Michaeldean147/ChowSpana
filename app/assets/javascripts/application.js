@@ -26,7 +26,7 @@ $(document).ready(function() {
   //     data: {'keyTerm': searchTerm}
   //   })
   // })
-  
+
   $('.ui.sticky').sticky({
     context: '.pageFooter'
   });
@@ -68,11 +68,12 @@ $(document).ready(function() {
             '<div class="ui grid postIndexMainGrid"> \
               <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
                 <div id="indexPost"> \
-                  <div id="postIndexPic" class="right floated center aligned two wide column"> \
-                    <img src="'+ data[i].image_url +'" height="180" width="260"> \
-                  </div> \
+                <center> \
                   <div id="indexProName"> \
                     <h1><a href="posts/' + data[i].id +'"class="css_class">' + data[i].productname + '</a></h1> \
+                  </div> \
+                  <div id="postIndexPic" class="two wide column"> \
+                    <img src="'+ data[i].image_url +'"> \
                   </div> \
                   <div id="indexProLoc"> \
                    <h5> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h5> \
@@ -82,9 +83,10 @@ $(document).ready(function() {
                   </div> \
                   <div id="indexProUser"> \
                    <h5> \
-                   <a href="users/' + data[i].user_id +'" style="color:#000000;" class="css_class">Posted By: ' + data[i].username + '</a> \
+                   <a href="users/' + data[i].user_id +'">Posted By: ' + data[i].username + '</a> \
                    </h5> \
                   </div> \
+                </center> \
                 </div> \
               </div> \
             </div>')

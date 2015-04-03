@@ -26,13 +26,13 @@
 <div class="ui grid postIndexMainGrid">
   <div id="postIndexGrids" class="right floated left aligned ten wide column">
     <div id="indexPost">
-
-      <div class="right floated center aligned two wide column">
-        <%= image_tag post.image.url, :size => "260x180" %>
+      <center>
+      <div id="indexProName">
+        <h1><%= link_to "#{post.productname}", post %></h1>
       </div>
 
-      <div id="indexProName">
-        <h1><%= link_to "#{post.productname}", post, {:style=>'color:#000000;', :class => "css_class"} %></h1>
+      <div id="postIndexPic" class="two wide column">
+        <%= image_tag post.image.url %>
       </div>
 
       <div id="indexProLoc">
@@ -57,7 +57,7 @@
           <% end %>
         </div>
       </div>
-
+      </center>
     </div>
   </div>
 </div>

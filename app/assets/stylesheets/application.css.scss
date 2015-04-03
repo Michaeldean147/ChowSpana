@@ -18,6 +18,14 @@
   max-height: 400px;
 }
 
+.postFormInput input,textarea{
+  width: 100%;
+}
+
+textarea{
+  max-width: 100%;
+}
+
 #postIndexPic{
   width: 400px;
 }

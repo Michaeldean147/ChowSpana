@@ -18,6 +18,16 @@
   max-height: 400px;
 }
 
+.homeSegmentImg{
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+#mapGrid{
+  background-color: #EEEEEE;
+  margin-right: 6%;
+}
+
 .mapPostImage img{
   max-width:210px;
   max-height:280px;
@@ -104,13 +114,7 @@ a{
   color: #B2B2B2;
 }
 
-#signupSegment{
-  background-color: #EEEEEE;
-  height: 600px;
-  -webkit-border-radius: 1em;
-}
-
-#signinSegment{
+.column .homeSegment{
   background-color: #EEEEEE;
   height: 600px;
   -webkit-border-radius: 1em;
@@ -165,12 +169,12 @@ a{
   background: image-url("candyisle.jpg") no-repeat;
 }
 
-#innerSignupSegment{
+.homeSegment .innerHomeSegment{
   margin-top: 70px;
 }
 
-#innerSigninSegment{
-  margin-top: 70px;
+.homeSegment .currentHomeSegment{
+  margin-top: 150px;
 }
 
 #homeSignInLink{
@@ -193,7 +197,7 @@ a{
 
 #postIndexGrids{
   background-color: #EEEEEE;
-  margin-right: 5%;
+  margin-right: 9%;
   margin-bottom: 3%;
 }
 

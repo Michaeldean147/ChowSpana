@@ -14,7 +14,7 @@
 </div>
 
 <div class="ui grid userShowHeader">
-  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+  <div id="postIndexGrids" class="right floated left aligned eight wide column">
     <center>
       <h1 id="indexHeader"><%="Your Favorites" %></h1>
     </center>
@@ -25,41 +25,36 @@
   <% @favorites.reverse.each do |favorite| %>
 
   <div class="ui grid postIndexMainGrid">
-    <div id="postIndexGrids" class="right floated left aligned ten wide column">
+    <div id="postIndexGrids" class="right floated left aligned eight wide column">
       <div id="indexPost">
-        <center>
         <div id="indexProName">
-          <h1><%= link_to "#{favorite.productname}", favorite, {:class => "css_class"} %></h1>
+          <h1><%= link_to "#{favorite.productname}", favorite %></h1>
         </div>
-        
-        <div id="postIndexPic" class="two wide column">
+
+        <div id="postIndexPic" class="two wide column userShowImage">
           <%= image_tag favorite.image.url %>
         </div>
 
-        <div id="indexProLoc">
-          <h5><%= "Spotted In: #{favorite.city}, #{favorite.state}"%></h5>
-        </div>
+        <div class="product-details user-show">
+          <div id="indexProLoc">
+            <h3><%= "Spotted In: #{favorite.city}, #{favorite.state}"%></h3>
+          </div>
 
-        <div id="indexProPrice">
-          <h5><%= "Price: #{favorite.price}"%></h5>
-        </div>
+          <div id="indexProPrice">
+            <h3><%= "Price: #{favorite.price}"%></h3>
+          </div>
 
-        <div id="indexProUser">
-          <h5>
-            <%= "Posted By:" %>
-            <%=link_to "#{favorite.user.username}", favorite.user %>
-          </h5>
+          <div id="indexProUser">
+            <h3>
+              <%= "Posted By:" %>
+              <%=link_to "#{favorite.user.username}", favorite.user %>
+            </h3>
+          </div>
         </div>
-      </center>
-      </div>
+     </div>
     </div>
   </div>
 
   <% end %>
 
-</div>
-
-<div class="ui grid pageFooter">
-  <div id="postIndexGrids" class="right floated left aligned ten wide column">
-  </div>
 </div>

@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
   self.per_page = 3
 
   belongs_to :user
+  has_many :comments
 
   validates :productname, presence: true
   validates :description, presence: true

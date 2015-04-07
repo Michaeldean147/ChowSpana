@@ -8,6 +8,7 @@
       <center class="userMenuButtons"><%= link_to "View All Finds On Map", map_path, class:"ui small button userMenuHomeButton" %></center>
 
       <center><h3 id="SegmentHeader"><%= "Post Options" %></h3></center>
+      <center class= "userMenuButtons"> <%= link_to "Add A Comment", new_post_comment_path(@post), class:"ui small button userMenuNewPostButton" %></center>
       <% if current_user && current_user.id == @post.user_id %>
       <center class="userMenuButtons"><%= link_to "Edit Post", edit_post_path(@post), class:"ui small button userMenuNewPostButton" %></center>
       <center class="userMenuButtons"><%= link_to "Destroy Post", @post , method: :delete, data: {confirm: "Are You Sure?"}, class:"ui small button userMenuNewPostButton" %></center>
@@ -37,47 +38,64 @@
 <div class="ui grid postIndexMainGrid">
   <div id="postIndexGrids" class="right floated left aligned ten wide column">
     <div id="indexPost">
-      <center>
-      <div id="postIndexPic" class="two wide column">
+      <div id="postIndexPic" class="one wide column">
         <%= image_tag @post.image.url %>
       </div>
 
-      <div>
-        <p><%= @post.description %></p>
-      </div>
-
-      <div>
-        <h5><%= "Spotted at: #{@post.location}" %></h5>
-      </div>
-
-      <div>
-        <h5><%= "Location: #{@post.address}"%><br>
-        <%="#{@post.city}, #{@post.state}" %></h5>
-      </div>
-
-      <div>
-        <h5><%= "Price:  #{@post.price}" %></h5>
-      </div>
-
-      <div>
-        <h5>
-          <%= "Posted By User: " %>
-          <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %><br>
-          <%="Posted on #{@post.created_at}"%>
-        </h5>
-      </div>
-
-      <div class="postStaticMap">
-        <span class="staticMapLink">Click To View/Hide Location</span>
-        <div class="postStaticImage hidden">
-          <% if @post.latitude.nil? || @post.longitude.nil? %>
-          <h2>Location Details Invalid</h2>
-          <% else %>
-          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@post.latitude},#{@post.longitude}&zoom=15&size=400x200&markers=color:red%7C#{@post.latitude},#{@post.longitude}"%>
-          <% end %>
+      <div class="product-details in-show">
+        <div>
+          <p><%= @post.description %></p>
         </div>
+        <div>
+          <h5><%= "Spotted at: #{@post.location}" %></h5>
+        </div>
+        <div>
+          <h5><%= "Location: #{@post.address}"%><br>
+            <%="#{@post.city}, #{@post.state}" %></h5>
+          </div>
+
+          <div>
+            <h5><%= "Price:  #{@post.price}" %></h5>
+          </div>
+
+          <div>
+            <h5>
+              <%= "Posted By User: " %>
+              <%=link_to @post.user.username, @post.user, {:style=>'color:#000000;', :class => "css_class"} %><br>
+              <%="Posted on #{@post.created_at}"%>
+            </h5>
+          </div>
+
+          <div class="postStaticMap">
+            <span class="staticMapLink">Click To View/Hide Location</span>
+            <div class="postStaticImage hidden">
+              <% if @post.latitude.nil? || @post.longitude.nil? %>
+              <h2>Location Details Invalid</h2>
+              <% else %>
+              <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@post.latitude},#{@post.longitude}&zoom=15&size=300x200&markers=color:red%7C#{@post.latitude},#{@post.longitude}"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% if !@post.comments.empty? %>
+      <div class="postComments">
+        <h4 id="commentsTitle">Comments</h4>
+        <% @post.comments.each do |comment| %>
+        <p>
+          <strong><%= comment.user.username %></strong> -
+          <%= comment.content %>
+          <% if comment.user_id == current_user.id || current_user.id == @post.user_id%>
+          <%= link_to "X", post_comment_path(@post, comment), method: :delete%>
+          <% end %>
+        </p>
+        <% end %>
       </div>
-    </center>
+
+    <% else %>
+      <div class="postComments">
+        <h4 id="commentsTitle">No Comments</h4>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

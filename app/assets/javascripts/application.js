@@ -66,27 +66,27 @@ $(document).ready(function() {
           console.log(data)
           $(".favorites").append(
             '<div class="ui grid postIndexMainGrid"> \
-              <div id="postIndexGrids" class="right floated left aligned ten wide column"> \
+              <div id="postIndexGrids" class="right floated left aligned eight wide column"> \
                 <div id="indexPost"> \
-                <center> \
                   <div id="indexProName"> \
-                    <h1><a href="posts/' + data[i].id +'"class="css_class">' + data[i].productname + '</a></h1> \
+                    <h1><a href="posts/' + data[i].post_id +'"class="css_class">' + data[i].productname + '</a></h1> \
                   </div> \
-                  <div id="postIndexPic" class="two wide column"> \
+                  <div id="postIndexPic" class="two wide column userShowImage"> \
                     <img src="'+ data[i].image_url +'"> \
                   </div> \
-                  <div id="indexProLoc"> \
-                   <h5> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h5> \
-                  </div> \
-                  <div id="indexProPrice"> \
-                   <h5> Price: ' + data[i].price + '</h5> \
-                  </div> \
-                  <div id="indexProUser"> \
-                   <h5> \
-                   <a href="users/' + data[i].user_id +'">Posted By: ' + data[i].username + '</a> \
-                   </h5> \
-                  </div> \
-                </center> \
+                  <div class="product-details user-show">\
+                    <div id="indexProLoc"> \
+                      <h3> Spotted In: ' + data[i].city + ', ' + data[i].state + '</h3> \
+                    </div> \
+                    <div id="indexProPrice"> \
+                      <h3> Price: ' + data[i].price + '</h3> \
+                    </div> \
+                    <div id="indexProUser"> \
+                      <h3> \
+                        Posted By: <a href="users/' + data[i].user_id +'"> '+ data[i].username + '</a> \
+                      </h3> \
+                    </div> \
+                  </div>\
                 </div> \
               </div> \
             </div>')

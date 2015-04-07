@@ -18,15 +18,17 @@ Rails.application.routes.draw do
    get '/new-sort' => 'favorites#newest_sort'
    get '/map' =>'posts#map'
 
-
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :users
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :favorites
+
 
   # Example resource route with options:
   #   resources :products do

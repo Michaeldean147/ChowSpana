@@ -14,14 +14,42 @@
  *= require_self
  */
 #postIndexPic img{
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 200px;
+  max-height: 200px;
+  margin-left: 10px;
+}
+
+#commentsTitle{
+  text-decoration: underline;
+}
+
+#commentsHeader{
+  
+}
+
+#indexProName h1 {
+  margin-left: 30px;
+}
+
+.postStaticImage{
+  padding-top: 10px;
 }
 
 .homeSegmentImg{
   max-width: 100%;
   height: auto;
   width: auto;
+}
+
+.product-details {
+  float: left;
+  margin-right: 100px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.product-details h3 {
+  margin-top: 0px;
 }
 #mapGrid{
   background-color: #EEEEEE;
@@ -45,7 +73,9 @@ textarea{
 }
 
 #postIndexPic{
-  width: 400px;
+  float: left;
+  max-width: 400px;
+  overflow: hidden;
 }
 
 #map{
@@ -106,6 +136,14 @@ h5{
   margin-top: 2%
 }
 
+#indexPost h3{
+  color: #000000;
+}
+
+#indexPost {
+  overflow: hidden;
+}
+
 a{
   color: #000000
 }
@@ -136,6 +174,32 @@ a{
 
 .browseWell{
   background-color: #EEEEEE;
+}
+
+.postComments{
+  padding-left: 8px;
+  margin-top: 10px;
+  margin-left: 42px;
+  width: 33%;
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 90%;
+  border-left: 1px solid black;
+}
+
+.in-show {
+  width: 40%;
+}
+
+.user-show {
+  width: 50%;
+}
+
+#indexProName h1 {
+  margin-left: 0px;
+  padding-left: 10px;
 }
 
 #popaisleImg{
@@ -197,7 +261,7 @@ a{
 
 #postIndexGrids{
   background-color: #EEEEEE;
-  margin-right: 9%;
+  margin-right: 15%;
   margin-bottom: 3%;
 }
 

@@ -1,0 +1,21 @@
+<center><h1><%= "New Comment For #{@post.productname}" %></h1></center>
+
+<div id="postIndexMainGrid" class="ui centered grid">
+  <div class="eight wide column postFormGrid">
+    <div class="postForm">
+      <%= form_for([@post, @post.comments.build]) do |f| %>
+
+      <div class="ui input postFormInput">
+        <%= f.label "Comment" %>
+        <%= f.text_field :content %>
+      </div>
+
+      <div class="postFormButtons">
+        <%= f.submit "Submit", class: "ui red button" %>
+        <%= link_to "Back", post_path(@post), class:"ui button" %>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

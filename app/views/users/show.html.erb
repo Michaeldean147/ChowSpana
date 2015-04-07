@@ -11,7 +11,7 @@
 </div>
 
 <div class="ui grid userShowHeader">
-  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+  <div id="postIndexGrids" class="right floated left aligned eight wide column">
     <center>
       <h1 id="indexHeader"><%="#{@user.username}'s Finds" %></h1>
       <h5 id="indexHeader"><%="Total Finds: #{@user.posts.length}" %></h5>
@@ -24,47 +24,55 @@
 
 <% @posts.each do |post| %>
 <div class="ui grid postIndexMainGrid">
-  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+  <div id="postIndexGrids" class="right floated left aligned eight wide column">
     <div id="indexPost">
-      <center>
       <div id="indexProName">
         <h1><%= link_to "#{post.productname}", post %></h1>
       </div>
 
-      <div id="postIndexPic" class="two wide column">
+      <div id="postIndexPic" class="two wide column userShowImage">
         <%= image_tag post.image.url %>
       </div>
 
-      <div id="indexProLoc">
-        <h5><%= post.location %></h5>
-      </div>
+      <div class="product-details user-show">
+        <div id="indexProLoc">
+          <h3><%= "Spotted In: #{post.city}, #{post.state}"%></h3>
+        </div>
 
-      <div id="indexProPrice">
-        <h5><%= "Price: #{post.price}"%></h5>
-      </div>
+        <div id="indexProPrice">
+          <h3><%= "Price: #{post.price}"%></h3>
+        </div>
 
-      <div id="indexProDes">
-        <h5><%= post.description %></h5>
-      </div>
+        <div id="indexProUser">
+          <h3>
+            <%= "Posted By:" %>
+            <%=link_to "#{post.user.username}", post.user %>
+          </h3>
+        </div>
 
-      <div class="postStaticMap">
-        <span class="staticMapLink">Click To View/Hide Location</span>
-        <div class="postStaticImage hidden">
-          <% if post.latitude.nil? || post.longitude.nil? %>
-          <h2>Location Details Invalid</h2>
-          <% else %>
-          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{post.latitude},#{post.longitude}&zoom=15&size=400x200&markers=color:red%7C#{post.latitude},#{post.longitude}"%>
-          <% end %>
+        <div class="postStaticMap">
+          <span class="staticMapLink">Click To View/Hide Location</span>
+          <div class="postStaticImage hidden">
+            <% if post.latitude.nil? || post.longitude.nil? %>
+            <h2>Location Details Invalid</h2>
+            <% else %>
+            <!-- <%= image_tag "http://api.tiles.mapbox.com/v4/michaeldean147.lk8hfgn9/#{post.longitude},#{post.latitude},4/400x200.jpg?access_token=pk.eyJ1IjoibWljaGFlbGRlYW4xNDciLCJhIjoiWjFIU0xOTSJ9.Dny6ilJR7MyqNy5HfffYgQ"%> -->
+            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{post.latitude},#{post.longitude}&zoom=15&size=300x200&markers=color:red%7C#{post.latitude},#{post.longitude}"%>
+            <% end %>
+          </div>
         </div>
       </div>
-      </center>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <% end %>
 
 <div class="ui grid pageFooter">
-  <div id="postIndexGrids" class="right floated left aligned ten wide column">
+  <div id="postIndexGrids" class="right floated left aligned eight wide column">
     <div class="apple_pagination">
       <%= will_paginate @posts, :container => false %>
       <div class="page_info">

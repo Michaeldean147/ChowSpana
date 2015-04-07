@@ -33,6 +33,7 @@ class FavoritesController < ApplicationController
     data = []
     @favorites.each do |fave|
       hash = {}
+      hash[:post_id] = fave.id
       hash[:productname] = fave.productname
       hash[:user_id] = fave.user_id
       hash[:city] = fave.city
@@ -51,6 +52,7 @@ class FavoritesController < ApplicationController
     data = []
     @favorites.each do |fave|
       hash = {}
+      hash[:post_id] = fave.id
       hash[:productname] = fave.productname
       hash[:user_id] = fave.user_id
       hash[:city] = fave.city

@@ -1,45 +1,36 @@
-== README
+What is ChowSpana?:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ With the amount of crazy or cool new food products that are released every month
+ around the country, it's no suprise that you can go on Facebook or Twitter and see so questions
+ from users asking "Where has this been released?" or "Has anyone seen these in San Francisco?". However,
+ Being that only certain brands launch a product locator app for their items, most of theses questions go unanswered.
+ With this problem in mind, I decided to create an app using Ruby on Rails and Javascript that would allow users to post about interesting food finds they've made in the
+ hopes that everyone will be better able to discover and obtain the food products they are looking for.
+ The point here to allow users to enjoy new foods without the hassle of going out and digging through all of the grocery stores
+ in their area just to find them.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Functionality:
 
+ ChowSpana allows users to sign-up via email and then start posting or browsing right away.
+ When posting a find of their own, users are able to upload an image of the product along with
+ a description, price, location(store name), address, city, and state. Other users can then come along,
+ and upon discovering a post that is relevant to their interest, can then save that post to
+ their favorites, then making it always available to view on their own personal favorites page. On the
+ favorites page, users are able to sort their favorites by the date of the posts creation.
 
+ Along with the ability to choose your favorite finds in the app, users can also post comments on each find.
+ These are intended for feedback on the items quality or just a heads up as to where it is still available at
+ the location specified by the poster.
+
+ Each post's location is also represented by both a static map image available to view by clicking a simple link
+ in the post's details, and by a marker on a larger map where each find on the site has it's own marker. By just clicking
+ on a find's marker, a user will see the image, city, and state corresponding to that post with a link to that find's
+ full details page. This same details page is also accessible by clicking on a product's name on virtually every page in the
+ app. Like the product details, the posters details are accesible by clicking on the poster's username. Doing this will
+ take you to a page listing both a count of that user's finds and the finds themselves.
 
 Todos:
 
-
-JS filtering of posts
-
-pagination/infinite scrolling
-
-turn leftNavSegment into dropdown from logo
-
-turn new post form submission into ajax
-
-validation for ajax posts
-
-potentially drag n drop images
+ My plans for the future of this app is to include a system of categorization for the posts, ie:
+ organizing posts by whether they are fast food or grocery items.
